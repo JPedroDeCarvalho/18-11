@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/cadastrologin.css">
+    <link rel="shortcut icon" href="img/logo.jpg">
+</head>
+
+<!-- Versão Validada -->
+
+<body>
+    <div class="bg"></div>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"><a href="">Smart Movement</a></h1>
+            <ul class="navbar">
+                <li><a href="./Index.html">Inicio</a></li>
+                <li><a href="./tela-login.html">Login</a></li>
+                <li><a href="./tela-cadastro.html">Cadastro</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="banner-login">
+        <div class="container">
+            <div class="card medio">
+                <div class="titulo">
+                    <h2>Bem vindo Novamente!</h2>
+                </div>
+                <form>
+                    <span>Use seu Email empresarial para realizar o Login</span>
+
+                    <input id="ipt_emailLog" type="text" placeholder="Digite seu Login">
+                    <input id="ipt_senhaLog" type="password" placeholder="Digite sua senha">
+
+                    <a href="./recuperacao.html">Estou com Problemas</a>
+
+                    <button onclick="bt_login()" type="button" class="bt_entrar">Entrar</button>
+                    <div class="link_cadastro">
+                        <p>OU</p>
+                        <span>Faça seu <a href="./tela-cadastro.html">Cadastro</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function bt_login() {
+
+        var senhaLogVar = ipt_senhaLog.value;
+        var emailLogVar = ipt_emailLog.value;
+
+
+        if ( senhaLogVar == "" || emailLogVar == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+
+            if (emailLogVar == "") {
+                console.log('email está em branco')
+            }
+            if (senhaLogVar == "") {
+                console.log('senha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+        if (emailLogVar.indexOf("@") == -1 || emailLogVar.indexOf(".com") == -1) {
+            window.alert("E-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        } 
+        if (senhaLogVar.length <= 3 || senhaLogVar.length >= 40) {
+            window.alert(`A Senha deve ter no mínimo 4 caracteres.`);
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            window.alert(`Bem-Vindo de volta!`);
+            window.location.href = "./dashboard.html"
+        }
+    }
+</script>

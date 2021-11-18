@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/cadastrologin.css">
+    <link rel="shortcut icon" href="img/logo.jpg">
+
+    <script src="./js/funcoes.js"></script>
+</head>
+
+<!-- versão Validada -->
+
+<body>
+    <body>
+        <div class="bg"></div>
+        <div class="header">
+            <div class="container">
+                <h1 class="titulo"><a href="./Index.html">Smart Movement</a></h1>
+                <ul class="navbar">
+                    <li><a href="./Index.html">Inicio</a></li>
+                    <li><a href="./tela-login.html">Login</a></li>
+                    <li><a href="./tela-cadastro.html">Cadastro</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="banner-cadastro">
+            <div class="container">
+                <div class="card">
+                    <span class="titulo">
+                        <h2>Realize seu Cadastro</h2>
+                    </span>
+                    <div class="conteudo">
+                        <p>Para realizar seu Cadastro, preencha corretamente o formulário abaixo:</p>
+                        <form>
+                            <input type="text" id="ipt_razao" placeholder="Digite a razão social">
+
+                            <input type="text" id="ipt_nome" placeholder="Digite seu Nome">
+
+                            <input type="number" id="ipt_cnpj" placeholder="Digite o CNPJ">
+
+                            <input type="text" id="ipt_endereco" placeholder="Digite o Endereço do Shopping">
+
+                            <input id="ipt_email" placeholder="Digite o Email">
+
+                            <input type="number" id="ipt_tel" placeholder="Digite seu Telefone">
+
+                            <input type="password" id="ipt_senha" placeholder="Digite sua Senha">
+                        </form>
+                            <button onclick="bt_cadastrar()">Cadastrar
+                                <a href="./confirmacao-cadastro.html"></a>
+                            </button>
+                    </div>
+                </div>
+            </div>
+    </body>
+    </html>
+
+    <script>
+  
+
+        
+    function bt_cadastrar() {
+      
+        var razaoVar = ipt_razao.value;
+        var nomeVar = ipt_nome.value;
+        var cnpjVar = ipt_cnpj.value;
+        var endVar = ipt_endereco.value;
+        var telVar = ipt_tel.value; 
+
+        var senhaVar = ipt_senha.value;
+        var emailVar = ipt_email.value;
+      
+
+        if ( razaoVar == "" || nomeVar == "" || cnpjVar == "" || emailVar == "" || senhaVar == "" || telVar == "" ||  endVar == "" ) {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+
+            if (razaoVar == "") {
+                console.log('Razão Social está em branco')
+            }
+            if (nomeVar == "") {
+                console.log('Nome está em branco')
+            }
+            if (cnpjVar == "") {
+                console.log('CNPJ está em branco')
+            }
+            if (emailVar == "") {
+                console.log('email está em branco')
+            }
+            if (senhaVar == "") {
+                console.log('senha está em branco')
+            }
+            if (telVar == "") {
+                console.log('Telefone está em branco')
+            }
+            if (endVar == "") {
+                console.log('Endereço está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("E-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        } 
+        if (cnpjVar.length <= 13 || cnpjVar.length >= 15){
+            window.alert(`O CNPJ não pode conter letras ou caracteres especias e precisa conter 14 numeros.`);
+           finalizarAguardar();
+            return false;
+        }
+        if (telVar.length <= 10 || telVar.length >= 12){
+            window.alert(`O Telefone não pode conter letras ou caracteres especias e precisa conter 11 numeros(DDD + 9 digitos).`);
+           finalizarAguardar();
+            return false;
+        }
+        if (senhaVar.length <= 3 || senhaVar.length >= 40) {
+            window.alert(`A Senha deve ter no mínimo 4 caracteres.`);
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            window.alert(`Cadastro realizado com sucesso. Bem-Vindo!`);
+            window.location.href = "#"
+        }
+    fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                razaoServer: razaoVar,
+                nomeServer: nomeVar,
+                cnpjServer: cnpjVar,
+                enderecoServer: endVar,
+                emailServer: emailVar,
+                telefoneServer: telVar,
+                senhaServer: senhaVar,
+                
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "tela-login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+    </script>

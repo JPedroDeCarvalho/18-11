@@ -1,0 +1,342 @@
+body {
+    padding: 0;
+    margin: 0;
+}   
+
+.bg{
+    background-image: url("./img/Shopping-Centers-ou-Lojas-de-bairro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.header {   
+    border-bottom: 7px solid #6B0394;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #9904d3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: #6B0394 0.2em 0.2em 0.2em;
+}
+
+.header .titulo {
+    padding-left: 40px;
+
+}
+.navbar {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.header a {
+    text-decoration: none;
+    color: #ffff;
+    font-weight: bold;
+    padding: 5px 30px;
+}
+
+.header a:hover{
+    color: rgba(255, 255, 255, 0.384);
+    transition: 0.5s;
+}
+
+/** aqui começa a tela de login **/
+
+.banner-login{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.banner-login .container{
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-login .card{
+    background-color: #ffff;
+    height: 500px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: #6B0394 0.3em 0.3em 0.2em;
+    border-radius: 10px;
+}
+.card .titulo{
+    background-color: #9904d3;
+    width: 600px;
+    height: 140px;
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    font-size: 30px;
+    border-bottom: 4px solid #6B0394;
+    border-radius: 5px;
+}
+.card .titulo h2{
+    text-shadow: #6B0394 0.1em 0.1em 0.1em;
+}
+
+button {
+    cursor: pointer;
+    
+}
+
+input {
+    height: 50px;
+    width: 400px;
+    padding: 3px;
+    border: none;
+    border-bottom: 2px solid #6B0394;
+    outline: none;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.card span{
+    text-align: center;
+}
+
+.bt_entrar{
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #B146DB;
+    width: 120px;
+    align-self: center;
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    margin-top: 50px;
+}
+
+form a{
+    text-decoration: none;
+    font-size: 12px;
+}
+form span{
+    margin-bottom: 10px;
+    color: rgb(129, 129, 129);
+}
+
+.link_cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link_cadastro a{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.link_cadastro a:hover{
+    color: tomato;
+    transition: 1s;
+}
+
+.link_cadastro span{
+    color: black;
+}
+
+/* aqui comeca o cadastro*/
+
+
+.banner-cadastro{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.banner-cadastro .container{
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.banner-cadastro .card{
+    background-color: #ffff;
+    height: 550px;
+    width: 600px;
+    box-shadow: #6B0394 0.3em 0.3em 0.2em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}    
+
+.card .conteudo{
+    display: flex;
+    height: 400px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .conteudo form{
+    display: flex;
+    height: 200px;
+    margin: 0;
+}
+
+.card .conteudo input{
+    height: 50px;
+    width: 400px;
+    padding: 3px;
+    border: none;
+    border-bottom: 2px solid #6B0394;
+    outline: none;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.card .conteudo input::placeholder{
+    text-align: center;
+}
+
+.card .conteudo p{
+    text-align: center;
+    width: 400px;
+}
+
+.conteudo button{
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    background-color: #B146DB;
+    width:150px;
+    height: 40px;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 50px;
+} 
+
+.conteudo a{
+    text-decoration: none;
+    color: white;
+}
+
+.conteudo a:hover{
+    color: #6B0394;
+    transition: 0.5s;
+}
+
+
+/* aqui é a parte de confirmacao de cadastro*/
+.banner-confirmacao-cadastro{
+    background-image: url(./img/Shopping-Centers-ou-Lojas-de-bairro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serifz;
+    display: flex;
+    justify-content: center;
+}
+
+.mensagem{
+    margin-top: 200px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9904d3;
+    width: 65%;
+    height: 38%;
+    border-radius: 30px;
+    text-shadow: #6B0394 0.3em 0.3em 0.2em;
+    border: 4px solid #6B0394;
+    box-shadow: #6B0394 0.3em 0.3em 0.2em;
+}
+
+.mensagem p{
+    text-align: center;
+    width: 90%;
+}
+
+.mensagem h2{
+    text-align: center;
+    width: 95%;
+
+}
+.mensagem a {
+    text-decoration: none;
+    color: #ffff;
+    font-weight: bold;
+}
+
+.mensagem a:hover{
+    color: #6B0394;
+    transition: 0.5s;
+}
+
+.banner-recuperacao{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+.banner-recuperacao .container{
+    margin-top: 90px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #9904d3;
+    width: 40%;
+    height: 90%;
+    border-radius: 30px;
+    border: 4px solid #6B0394;
+    box-shadow: #6B0394 0.3em 0.3em 0.2em;
+}
+
+.banner-recuperacao a {
+    text-decoration: none;
+    color: #ffff;
+    font-weight: bold;
+}
+
+.banner-recuperacao a:hover{
+    color: #6B0394;
+    transition: 0.5s;
+}
+
+.banner-recuperacao p{
+    width: 75%;
+    text-align: center;
+}
+.conteudo button{
+    margin-top: 80px;
+}
+
+
+
